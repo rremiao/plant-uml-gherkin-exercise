@@ -23,8 +23,7 @@ state para_cada_index_i_em_args[1..] {
     state valida_golpes <<choice>>
     state valida_caracteres <<choice>>
     decrem: N--
-    [*] --> valida_golpes
-    valida_golpes --> [*]: if size(args[i]) < 1 || size(args[i]) > 1000 
+    [*] --> valida_golpes 
     valida_golpes --> valida_caracteres: if size(args[i]) >= 1 && size(args[i]) <= 1000
     valida_caracteres --> decrem: if contains(args[i], "CD")
     valida_caracteres --> [*]: if !contains(args[i], "CD")
@@ -33,5 +32,6 @@ state para_cada_index_i_em_args[1..] {
 }
 valida_N --> apresenta_N: if N == 0 || i + 1 == size(args)
 apresenta_N --> [*]
+valida_golpes --> [*]: if size(args[i]) < 1 || size(args[i]) > 1000
 
 ```
