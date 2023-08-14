@@ -1,0 +1,49 @@
+@system
+Feature: Death Knight Hero
+
+Narrative:
+
+In order to calculate the amount of battles won
+As a system
+I want to know the result of each battle
+
+Scenario: Run program with input 3 and <DCOOO, DODOCD, COD> (amountOfBattles, listOfCommands)
+
+Given input is
+"""
+3
+DCOOO, DODOCD, COD
+"""
+When program runs
+Then output should be
+"""
+X = 2
+
+"""
+
+Scenario: Run program with input 3 and <DCDOO, DODOCD, OOCD> (amountOfBattles, listOfCommands)
+Given input is
+"""
+3
+DCDOO, DODOCD, OOCD
+"""
+When program runs
+Then output should be
+"""
+X = 0
+
+"""
+
+Scenario: Run program with input 0 and <> (amountOfBattles, listOfCommands)
+
+Given input is
+"""
+0
+<>
+"""
+When program runs
+Then output should be
+"""
+X = 0
+
+"""
