@@ -47,3 +47,25 @@ Then output should be
 X = 0
 
 """
+
+Scenario: Run program with input 4 and <DCDOO, DODOCD, OOCD> (amountOfBattles, listOfCommands)
+Given input is
+"""
+4
+DCDOO, DODOCD, OOCD
+"""
+When program runs
+Then output should be
+"""
+ERROR
+
+Scenario: Run program with input 4 and <DCODCOO, OCOD, OODCO, COODOO> (amountOfBattles, listOfCommands)
+Given input is
+"""
+4
+DCODCOO, OCOD, OODCO, COODOO
+"""
+When program runs
+Then output should be
+"""
+X = 4
